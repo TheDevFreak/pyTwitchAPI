@@ -397,7 +397,7 @@ class TwitchWebHook:
         if d is not None:
             if len(d['data']) > 0:
                 data = d['data'][0]
-                data['started_at'] = datetime.fromisoformat(data['started_at'])
+                data['started_at'] = du_parser.isoparse(data['started_at'])
             else:
                 data = {
                     'type': 'offline'
